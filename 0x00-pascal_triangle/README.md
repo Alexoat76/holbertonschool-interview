@@ -50,8 +50,15 @@ Read or watch:
 	
 - Clone this repository: `https://github.com/Alexoat76/holbertonschool-interview`	
 - Access to directory: `cd 0x00-pascal_triangle`
+- `Compile` accord to `instructions` of each task.
 
 ## Files :file_folder:
+
+## Test :heavy_check_mark:
+
++ **[0-main.py](./0-main.py)**  *`Provided by Holberton School`*.
+
+---
 
 ## Tasks
 
