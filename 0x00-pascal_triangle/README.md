@@ -48,7 +48,7 @@ Read or watch:
 
 ### Installation :computer:
 	
-- Clone this repository: `https://github.com/Alexoat76/holbertonschool-interview`	
+- Clone this repository: `https://github.com/Alexoat76/holbertonschool-interview.git`	
 - Access to directory: `cd 0x00-pascal_triangle`
 - `Compile` accord to `instructions` of each task.
 
