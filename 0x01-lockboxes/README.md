@@ -7,7 +7,7 @@
 </p>
 
 ---
-# 0x00. Pascal's Triangle
+# 0x01. Lockboxes
 
 This task consist in Create a function that determines if all the boxes can be opened. Using Python language implementation.
 
@@ -30,77 +30,78 @@ This task consist in Create a function that determines if all the boxes can be o
 ## Resources :books:
 Read or watch:
 	
-[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/80px-Google_2015_logo.svg.png)](https://www.google.com/search?q=pascal+triangle+in+python&oq=Pascal+trian&aqs=chrome.6.69i57j0i512l9.7223j0j15&sourceid=chrome&ie=UTF-8)
+[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/80px-Google_2015_logo.svg.png)](https://www.google.com/search?q=lockboxes+python&source=lmns&bih=929&biw=1920&hl=en&sa=X&ved=2ahUKEwjSs4KW8Kb5AhWQcDABHax3CRAQ_AUoAHoECAEQAA)
 
-[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/70px-Logo_of_YouTube_%282015-2017%29.svg.png)](https://www.youtube.com/results?search_query=pascal%27s+triangle+in+python)
+[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/70px-Logo_of_YouTube_%282015-2017%29.svg.png)](https://www.youtube.com/watch?v=258YfDUSvI0)
 
 ## Requirements
 ### General
-- Allowed editors: `vi`, `vim`, `emacs` 
-- All -files will be interpreted/compiled on Ubuntu 20.04 LTS using `python3`.
-- All -files should end with a new line
-- The first line of all -files should be exactly `#!/usr/bin/python3` 
-- Libraries imported in the Python files must be organized in alphabetical order
-- A `README.md` file, at the root of the folder of the project, is mandatory
-- Your code should use the `PEP 8` style
-- All your files must be executable
-- The length of your files will be tested using `wc`
+- Allowed editors:  *` vi `* ,  *` vim `* ,  *` emacs `*
+- All files will be interpreted/compiled on Ubuntu 14.04 LTS using  *` python3 `*  (version 3.4.3)
+- All files should end with a new line
+- The first line of all your files should be exactly  *` #!/usr/bin/python3 `* 
+- A  *` README.md `*  file, at the root of the folder of the project, is mandatory
+- The code should be documented
+- The code should use the  *` PEP 8 `*  style (version 1.7.x)
+- All files must be executable
 
 ### Installation :computer:
 	
 - Clone this repository: `https://github.com/Alexoat76/holbertonschool-interview.git`	
-- Access to directory: `cd 0x00-pascal_triangle`
+- Access to directory: `cd 0x01-lockboxes`
 - `Compile` accord to `instructions` of each task.
 
 ## Files :file_folder:
 
 ## Test :heavy_check_mark:
 
-+ **[0-main.py](./0-main.py)**  *`Provided by Holberton School`*.
++ **[main_0.py](./main_0.py)**  *`Provided by Holberton School`*.
 
 ---
 
 ## Tasks
 
-+ [x] 0\. **Pascal's Triangle**
++ [x] 0\. **Lockboxes**
 
-+ **[0-pascal_triangle.py](./0-pascal_triangle.py)**
++ **[0-lockboxes.py](./0-lockboxes.py)**
 
-Create a function  *`def pascal_triangle(n):`*   that returns a list of lists of integers representing the Pascal’s triangle of   *` n `*  :
+You have *` n `* number of locked boxes in front of you. Each box is numbered sequentially from  *` 0 `*  to  *` n - 1 `*  and each box may contain keys to the other boxes.
 
-* Returns an empty list if  *` n <= 0 `* 
-* You can assume  *` n `*  will be always an integer
+Write a method that determines if all the boxes can be opened.
+
+* Prototype:  **` def canUnlockAll(boxes) `** 
+*  *` boxes `*  is a list of lists
+* A key with the same number as a box opens that box
+* You can assume all keys will be positive integers
+	* There can be keys that do not have boxes
+* The first box  *` boxes[0] `*  is unlocked
+* Return  *` True `*  if all boxes can be opened, else return  *` False `*
 
 ```bash
-$ cat 0-main.py
+$ cat main_0.py
 #!/usr/bin/python3
-"""
-0-main
-"""
-pascal_triangle = __import__('0-pascal_triangle').pascal_triangle
 
-def print_triangle(triangle):
-    """
-    Print the triangle
-    """
-    for row in triangle:
-        print("[{}]".format(",".join([str(x) for x in row])))
+canUnlockAll = __import__('0-lockboxes').canUnlockAll
 
+boxes = [[1], [2], [3], [4], []]
+print(canUnlockAll(boxes))
 
-if __name__ == "__main__":
-    print_triangle(pascal_triangle(5))
+boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
+print(canUnlockAll(boxes))
+
+boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
+print(canUnlockAll(boxes))
 
 $
-$ 
-$ ./0-main.py
-[1]
-[1,1]
-[1,2,1]
-[1,3,3,1]
-[1,4,6,4,1]
-$ 
 ```
 
+```
+$ ./main_0.py
+True
+True
+False
+$
+```
 ---
 
 ## Credits
