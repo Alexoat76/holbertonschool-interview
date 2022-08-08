@@ -8,10 +8,10 @@
 
 # 0x02. Minimum Operations
 
-This task consist in Create a function that determines if all the boxes can be opened. Using Python language implementation.
+This task consist in Create a function that calculates the fewest number of operations needed to result in exactly *` n H `* characters in a file. Using Python language.
 
 <p align="center">
-  <img width="220"  
+  <img width="350"  
         src="https://cdn.sanity.io/images/oaglaatp/production/a697fedfc98c7c8f5a8063a3461e53e1350a6acb-1200x800.png?w=1200"
   >
 </p>
@@ -29,9 +29,9 @@ This task consist in Create a function that determines if all the boxes can be o
 ## Resources :books:
 Read or watch:
 	
-[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/80px-Google_2015_logo.svg.png)](https://www.google.com/search?q=lockboxes+python&source=lmns&bih=929&biw=1920&hl=en&sa=X&ved=2ahUKEwjSs4KW8Kb5AhWQcDABHax3CRAQ_AUoAHoECAEQAA)
+[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/80px-Google_2015_logo.svg.png)](https://www.google.com/search?q=method+that+calculates+the+fewest+number+of+operations+needed+to+result+in+exactly+n+h+characters&oq=&aqs=chrome.0.69i59i450l8.536578941j0j15&sourceid=chrome&ie=UTF-8)
 
-[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/70px-Logo_of_YouTube_%282015-2017%29.svg.png)](https://www.youtube.com/watch?v=258YfDUSvI0)
+[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/70px-Logo_of_YouTube_%282015-2017%29.svg.png)](https://www.youtube.com/watch?v=03ZepmoVJGI)
 
 ## Requirements
 ### General
@@ -47,7 +47,7 @@ Read or watch:
 ### Installation :computer:
 	
 - Clone this repository: `https://github.com/Alexoat76/holbertonschool-interview.git`	
-- Access to directory: `cd 0x01-lockboxes`
+- Access to directory: `cd 0x02-minimum_operations`
 - `Compile` accord to `instructions` of each task.
 
 ## Files :file_folder:
@@ -60,46 +60,48 @@ Read or watch:
 
 ## Tasks
 
-+ [x] 0\. **Lockboxes**
++ [x] 0\. **minoperations.py**
 
-+ **[0-lockboxes.py](./0-lockboxes.py)**
++ **[0-minoperations.py](./0-minoperations.py)**
 
-You have *` n `* number of locked boxes in front of you. Each box is numbered sequentially from  *` 0 `*  to  *` n - 1 `*  and each box may contain keys to the other boxes.
+In a text file, there is a single character   *` H `*  . Your text editor can execute only two operations in this file:  *` Copy All `*   and   *` Paste `*  . Given a number   *` n `*, 
+write a method that calculates the fewest number of operations needed to result in exactly   *` n `*   *` H `*   characters in the file.
+* Prototype:  *` def minOperations(n) `* 
+* Returns an integer
+* If  *` n `*  is impossible to achieve, return  *` 0 `* 
 
-Write a method that determines if all the boxes can be opened.
+Example:
 
-* Prototype:  **` def canUnlockAll(boxes) `** 
-*  *` boxes `*  is a list of lists
-* A key with the same number as a box opens that box
-* You can assume all keys will be positive integers
-	* There can be keys that do not have boxes
-* The first box  *` boxes[0] `*  is unlocked
-* Return  *` True `*  if all boxes can be opened, else return  *` False `*
+ *` n = 9 `* 
+ *` H `*  =>  *` Copy All `*  => *` Paste `*   =>  *` HH `*  =>  *` Paste `*  =>  *` HHH `*  =>  *` Copy All `*  => *` Paste `*  =>  *` HHHHHH `*   =>  *` Paste `*  => *` HHHHHHHHH `* 
+
+Number of operations:   *` 6 `*
+ 
+```bash
+$ cat 0-main.py
+#!/usr/bin/python3
+"""
+Main file for testing
+"""
+
+minOperations = __import__('0-minoperations').minOperations
+
+n = 4
+print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+
+n = 12
+print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+
+carrie@ubuntu:~/0x02-minoperations$
+
+```
 
 ```bash
-$ cat main_0.py
-#!/usr/bin/python3
-
-canUnlockAll = __import__('0-lockboxes').canUnlockAll
-
-boxes = [[1], [2], [3], [4], []]
-print(canUnlockAll(boxes))
-
-boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
-print(canUnlockAll(boxes))
-
-boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
-print(canUnlockAll(boxes))
-
+$ ./0-main.py
+Min number of operations to reach 4 characters: 4
+Min number of operations to reach 12 characters: 7
 $
-```
 
-```
-$ ./main_0.py
-True
-True
-False
-$
 ```
 ---
 
