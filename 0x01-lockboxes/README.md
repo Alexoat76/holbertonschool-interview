@@ -12,7 +12,7 @@
 This task consist in Create a function that determines if all the boxes can be opened. Using Python language implementation.
 
 <p align="center">
-  <img width="220"  
+  <img width="250"  
         src="https://media4.giphy.com/media/3orif74MzRbKQeJiQE/giphy.gif?cid=ecf05e4744ao5uo4tj521e1lc1ljfi9oltj8oj72jayma0we&rid=giphy.gif&ct=g"
   >
 </p>
