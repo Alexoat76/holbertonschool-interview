@@ -14,7 +14,7 @@
 Thank you for visiting this repository which contain exercises in Python language for the Interview Preparation. This is a part of ***`Back-End Specialization`*** curriculum at at `Holberton School`.
 
 <p align="center">
-  <img width="400"  
+  <img width="350"  
         src="https://c.tenor.com/9x7R0qRTacwAAAAC/using-the-computer-kyle-broflovski.gif"
   >
 </p>
@@ -60,10 +60,10 @@ The projects in this repository cover:
 
 | Project | Description |
 | :--- | :---|
-| **[0x00. Pascal's Triangle](./0x00-pascal_triangle)** | Implement a solution // Returns a list of lists of ints representing the Pascal’s triangle |
-| **[0x01. Lockboxes](./0x01-lockboxes)** | Implement a solution // Determines if all the boxes can be opened |
-| **[0x02. Minimum Operations](./0x02-minimum_operations)** | Implement a solution // Calculates the fewest number of operations needed |
-  
+| **[0x00. Pascal's Triangle](./0x00-pascal_triangle)** | Representing the Pascal’s triangle |
+| **[0x01. Lockboxes](./0x01-lockboxes)** | Determines if all the boxes can be opened |
+| **[0x02. Minimum Operations](./0x02-minimum_operations)** | Calculate the fewest number of operations needed |
+
 ---
 	
 ## Credits
