@@ -11,7 +11,7 @@
 This task consist in Create a function that calculates the fewest number of operations needed to result in exactly *` n H `* characters in a file. Using Python language.
 
 <p align="center">
-  <img width="350"  
+  <img width="300"  
         src="https://cdn.sanity.io/images/oaglaatp/production/a697fedfc98c7c8f5a8063a3461e53e1350a6acb-1200x800.png?w=1200"
   >
 </p>
