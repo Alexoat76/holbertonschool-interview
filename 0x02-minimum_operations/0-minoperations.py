@@ -11,6 +11,7 @@ Returns: integer
 if n is impossible to achieve, returns 0
 """
 
+
 def minOperations(n):
     """
     In a text file, there is a single character H.
