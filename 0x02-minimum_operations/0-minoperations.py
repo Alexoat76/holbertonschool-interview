@@ -17,7 +17,7 @@ def minOperations(n):  # n is the number of H characters in the file
 
     setrecursionlimit(10**6)  # set recursion limit to 10^6
 
-    operations = 0  # number of operations given the current number of H characters
+    operations = 0  # number of operations given the current number of H char.
     inc = 2   # 3 4 5 6 etc. are the possible values of n
 
     # factor = 2
@@ -33,4 +33,4 @@ def minOperations(n):  # n is the number of H characters in the file
             inc = 1  # resets for next loop
         inc = inc + 1
 
-    return operations # number of operations needed to achieve n H characters
+    return operations  # number of operations needed to achieve n H characters
