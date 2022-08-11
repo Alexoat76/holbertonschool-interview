@@ -11,7 +11,7 @@
 # Backend-Python
 <div style="text-align: justify">
 
-Thank you for visiting this repository which contain exercises in Python language for the Interview Preparation. This is a part of ***`Back-End Specialization`*** curriculum at at `Holberton School`.
+Thank you for visiting this repository which contain exercises in Python language for the Interview Preparation. This is a part of ***`Back-End Specialization`*** curriculum at `Holberton School`.
 
 <p align="center">
   <img width="350"  
