@@ -63,6 +63,7 @@ The projects in this repository cover:
 | **[0x00. Pascal's Triangle](./0x00-pascal_triangle)** | Representing the Pascal’s triangle |
 | **[0x01. Lockboxes](./0x01-lockboxes)** | Determines if all the boxes can be opened |
 | **[0x02. Minimum Operations](./0x02-minimum_operations)** | Calculate the fewest number of operations needed |
+| **[0x03. Log Parsing](./0x03-log_parsing)** | Reads *`stdin`* line by line and Computes metrics |
 
 ---
 	
