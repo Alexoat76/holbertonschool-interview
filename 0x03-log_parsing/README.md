@@ -6,12 +6,12 @@
 <img src="https://img.shields.io/badge/Markdown-black.svg"/><br>	
 </p>
 
-# 0x02. Minimum Operations
+# 0x03. Log Parsing
 
 This task consist in Create a *`Script`* that reads **`stdin`** line by line and **Computes metrics**. Using Python language.
 
 <p align="center">
-  <img width="400"  
+  <img width="380"  
         src="https://files.realpython.com/media/Subprocess_Watermarked.6d0e6a5d7d77.jpg"
   >
 </p>
