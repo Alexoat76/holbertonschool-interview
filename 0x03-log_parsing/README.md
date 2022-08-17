@@ -11,7 +11,7 @@
 This task consist in Create a *`Script`* that reads **`stdin`** line by line and **Computes metrics**. Using Python language.
 
 <p align="center">
-  <img width="380"  
+  <img width="360"  
         src="https://files.realpython.com/media/Subprocess_Watermarked.6d0e6a5d7d77.jpg"
   >
 </p>
