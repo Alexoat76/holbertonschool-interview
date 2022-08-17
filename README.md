@@ -3,7 +3,10 @@
 <img src="https://img.shields.io/badge/Shell-ligthgreen.svg"/>
 <img src="https://img.shields.io/badge/Vim-green.svg"/>
 <img src="https://img.shields.io/badge/Python-blue.svg"/>
-<img src="https://img.shields.io/badge/Markdown-black.svg"/><br>	
+<img src="https://img.shields.io/badge/Markdown-black.svg"/><br>
+<img src="https://img.shields.io/github/repo-size/Alexoat76/holbertonschool-interview"/>
+<img src="https://img.shields.io/github/languages/code-size/Alexoat76/holbertonschool-interview.svg"/>
+<img src="https://img.shields.io/github/last-commit/Alexoat76/holbertonschool-interview?style=round-square"/>
 </p>
 
 ---
