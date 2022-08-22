@@ -60,7 +60,7 @@ Read or watch:
 
 ## Tasks
 
-+ [x] 0\. **0. Log parsing**
++ [x] 0\. **Log parsing**
 
 + **[0-stats.py](./0-stats.py)**
 
@@ -140,8 +140,6 @@ KeyboardInterrupt
 $ 
 
 ```
-
-
 ---
 
 ## Credits
