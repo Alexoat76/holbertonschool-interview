@@ -67,7 +67,8 @@ The projects in this repository cover:
 | **[0x01. Lockboxes](./0x01-lockboxes)** | Determines if all the boxes can be opened |
 | **[0x02. Minimum Operations](./0x02-minimum_operations)** | Calculate the fewest number of operations needed |
 | **[0x03. Log Parsing](./0x03-log_parsing)** | Reads *`stdin`* line by line and Computes metrics |
-
+| **[0x04. UTF-8 Validation](./0x04-utf8_validation)** | Determines if valid *`UTF-8`* encoding. |
+	
 ---
 	
 ## Credits
