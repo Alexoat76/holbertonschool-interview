@@ -40,40 +40,30 @@ def validUTF8(data):
     """
     # number of bytes in the current UTF-8 character being processed
     number_of_bytes = 0
+    mask = 255
 
-    # Mask to check if the most significant bit is set to 1 or not
-    mask1 = 1 << 7
-
-    # Mask to check if the second most significant bit is set or not
-    mask2 = 1 << 6
-    for byte in data:  # for each byte in the data set
+    for byte in data:
+        # Check if the first bit is a 0
         if number_of_bytes == 0:
-            if byte & mask1 == 0:  # if the most significant bit is 0
-                # reset the number of bytes in the current UTF-8 character
-                number_of_bytes = 0
-                """if the most significant bit is 1 and the second most
-                   significant bit is 0 (110xxxxx) then the number of bytes in
-                   the current UTF-8 character is 1 byte.
-                """
-            elif byte & mask1 == mask1:
+            # mask out the first bit
+            byte = byte & mask
+            # Check if the first 5 bits are 110 (0b110xxxxx)
+            if (byte >> 5) == 0b110:
                 number_of_bytes = 1
-                """if the most significant bit is 1 and the second most
-                   significant bit is 1 (1110xxxx) then the number of bytes
-                   in the current UTF-8 character is 2 bytes.
-                """
-            elif byte & mask2 == mask2:
-                # reset the number of bytes in the current UTF-8 character
+            # Check if the first 4 bits are 1110 (0b1110xxxx)
+            elif (byte >> 4) == 0b1110:
                 number_of_bytes = 2
-            else:
+            # Check if the first 3 bits are 11110 (0b11110xxx)
+            elif (byte >> 3) == 0b11110:
+                number_of_bytes = 3
+            # check if the first bit is a 1 (0b1xxxxxxx)
+            elif (byte >> 7):
                 return False
         else:
-            """if the most significant bit is 0 then the number of bytes in
-               the current UTF-8 character is invalid.
-            """
-            if byte & mask1 == 0:
+            # Check if the first 2 bits are 10 (0b10xxxxxx)
+            if (byte >> 6) != 0b10:
                 return False
+            # Decrement the number of bytes in the current UTF-8 character
             number_of_bytes -= 1
-    """if number_of_bytes is 0, then all bytes are valid UTF-8 characters and
-       the data is valid UTF-8 encoding
-    """
+
     return number_of_bytes == 0
