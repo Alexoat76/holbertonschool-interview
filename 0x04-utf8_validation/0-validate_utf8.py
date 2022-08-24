@@ -40,7 +40,7 @@ def validUTF8(data):
     """
     # number of bytes in the current UTF-8 character being processed
     number_of_bytes = 0
-    mask = 255
+    mask = 255 # 11111111 in binary (8 bits)
 
     for byte in data:
         # Check if the first bit is a 0
