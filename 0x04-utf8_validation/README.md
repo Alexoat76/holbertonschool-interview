@@ -11,7 +11,7 @@
 This task consist in Create a *`Script`* that determines if a given data set represents a valid **`UTF-8`** encoding. Using Python language.
 
 <p align="center">
-  <img width="360"  
+  <img width="320"  
         src="https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Teaser/UTF8-t.jpg"
   >
 </p>
