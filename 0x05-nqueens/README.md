@@ -6,7 +6,7 @@
 <img src="https://img.shields.io/badge/Markdown-black.svg"/><br>	
 </p>
 
-# 0x04. UTF-8 Validation
+# 0x05. N Queens
 
 This task consist in Create a *`Program`* that solves the N queens problems. Using Python language.
 
@@ -33,7 +33,8 @@ Read or watch:
 
 [![M](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/70px-Logo_of_YouTube_%282015-2017%29.svg.png)](https://www.youtube.com/results?search_query=n+queens+problem+python)
 
-
+- **[Queen](https://intranet.hbtn.io/rltoken/u80efQj5HUl9-FwkzWieCA)** 
+- **[Backtracking](https://intranet.hbtn.io/rltoken/OjIVuPYh-rEjUHc7crQ5lw)**
 
 ## Requirements
 ### General
@@ -58,6 +59,37 @@ Read or watch:
 + [x] 0\. **0. N queens**
 
 + **[0-nqueens.py](./0-nqueens.py)**
+
+The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard.Write a program that solves the N queens problem.
+* Usage:  *` nqueens N `* 
+	* If the user called the program with the wrong number of arguments, print  *` Usage: nqueens N `* , followed by a new line, and exit with the status  *` 1 `* 
+
+* where N must be an integer greater or equal to  *` 4 `* 
+	* If N is not an integer, print  *` N must be a number `* , followed by a new line, and exit with the status  *` 1 `* 
+	* If N is smaller than  *` 4 `* , print  *` N must be at least 4 `* , followed by a new line, and exit with the status  *` 1 `* 
+
+* The program should print every possible solution to the problem
+	* One solution per line
+	* Format: see example
+	* You don’t have to print the solutions in a specific order
+
+* You are only allowed to import the  *` sys `*  module
+
+**`Don't forget to read:`**  
+- **[Queen](https://intranet.hbtn.io/rltoken/u80efQj5HUl9-FwkzWieCA)** 
+- **[Backtracking](https://intranet.hbtn.io/rltoken/OjIVuPYh-rEjUHc7crQ5lw)**
+
+```bash
+$ ./0-nqueens.py 4
+[[0, 1], [1, 3], [2, 0], [3, 2]]
+[[0, 2], [1, 0], [2, 3], [3, 1]]
+$ ./0-nqueens.py 6
+[[0, 1], [1, 3], [2, 5], [3, 0], [4, 2], [5, 4]]
+[[0, 2], [1, 5], [2, 1], [3, 4], [4, 0], [5, 3]]
+[[0, 3], [1, 0], [2, 4], [3, 1], [4, 5], [5, 2]]
+[[0, 4], [1, 2], [2, 0], [3, 5], [4, 3], [5, 1]]
+$ 
+```
 
 ---
 
