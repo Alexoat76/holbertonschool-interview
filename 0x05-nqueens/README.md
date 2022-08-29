@@ -11,7 +11,7 @@
 This task consist in Create a *`Program`* that solves the N queens problems. Using Python language.
 
 <p align="center">
-  <img width="320"  
+  <img width="260"  
         src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Eight-queens-animation.gif?20070625172331"
   >
 </p>
