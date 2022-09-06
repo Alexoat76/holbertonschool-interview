@@ -6,7 +6,7 @@
 <img src="https://img.shields.io/badge/Markdown-black.svg"/><br>	
 </p>
 
-# 0x05. N Queens
+# 0x06. Star Wars API
 
 This task consist in Create a *`Script`* that prints all characters of a **`Star Wars`** movie. Using Node-JS.
 
