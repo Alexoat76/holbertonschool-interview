@@ -41,32 +41,32 @@ Read or watch:
 - All files should end with a new line
 - The first line of all files should be exactly  *` #!/usr/bin/node `*
 - A  *` README.md `*  file, at the root of the folder of the project, is mandatory
-- The code should be  *` semistandard `*  compliant. **[Rules of Standard](https://intranet.hbtn.io/rltoken/9D55NBEvxCOb2UpyDm1wUQ)** 
- + **[semicolons on top](https://intranet.hbtn.io/rltoken/aHP62g9O1_ZGY34qeberZA)** . Also as reference: **[AirBnB style](https://intranet.hbtn.io/rltoken/Jcjw9xN9Y2IuLuve3yt7ag)**
+- The code should be  *` semistandard `*  compliant. **[Rules of Standard](https://intranet.hbtn.io/rltoken/9D55NBEvxCOb2UpyDm1wUQ)** + **[semicolons on top](https://intranet.hbtn.io/rltoken/aHP62g9O1_ZGY34qeberZA)** . Also as reference: **[AirBnB style](https://intranet.hbtn.io/rltoken/Jcjw9xN9Y2IuLuve3yt7ag)**
 - All files must be executable
 - The length of the files will be tested using  *` wc `*
 - Not allowed to use  *` var `*
 
 ## More Info
 ### Install Node 10
-`
+```bash
 $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
-`
+```
 
 ### Install semi-standard
-**[Documentation](https://intranet.hbtn.io/rltoken/aHP62g9O1_ZGY34qeberZA)**
+***[Documentation](https://intranet.hbtn.io/rltoken/aHP62g9O1_ZGY34qeberZA)***
 
- ` $ sudo npm install semistandard --global
- `
+```bash
+$ sudo npm install semistandard --global
+```
 
 ### Install request module and use it
-**[Documentation](https://intranet.hbtn.io/rltoken/mUx37zH56AfjkWx0O65QaA)**
+***[Documentation](https://intranet.hbtn.io/rltoken/mUx37zH56AfjkWx0O65QaA)***
 
-`
+```bash
 $ sudo npm install request --global
 $ export NODE_PATH=/usr/lib/node_modules
-`
+```
 
 ### Installation :computer:
 	
