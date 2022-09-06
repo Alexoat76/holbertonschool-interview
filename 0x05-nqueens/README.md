@@ -56,7 +56,7 @@ Read or watch:
 
 ## Tasks
 
-+ [x] 0\. **0. N queens**
++ [x] 0\. **N queens**
 
 + **[0-nqueens.py](./0-nqueens.py)**
 
