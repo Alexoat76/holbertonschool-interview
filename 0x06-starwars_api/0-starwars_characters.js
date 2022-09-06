@@ -14,7 +14,7 @@ const urlApi = 'https://swapi-api.hbtn.io/api/films/';
 // query API
 request(urlApi + filmId, async (err, res, body) => {
   if (err) return console.error(err);
-  
+
   // find URLs of each character in the film as a list obj
   const characters = JSON.parse(body).characters;
   showNames(characters);
