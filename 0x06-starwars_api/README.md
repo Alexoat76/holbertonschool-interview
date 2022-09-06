@@ -59,6 +59,7 @@ $ sudo apt-get install -y nodejs
 ```bash
 $ sudo npm install semistandard --global
 ```
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
 
 ### Install request module and use it
 ***[Documentation](https://intranet.hbtn.io/rltoken/mUx37zH56AfjkWx0O65QaA)***
