@@ -3,6 +3,7 @@
 <img src="https://img.shields.io/badge/Shell-ligthgreen.svg"/>
 <img src="https://img.shields.io/badge/Vim-green.svg"/>
 <img src="https://img.shields.io/badge/Python-blue.svg"/>
+<img src="https://img.shields.io/badge/JavaScript-yellow.svg"/>
 <img src="https://img.shields.io/badge/Markdown-black.svg"/><br>
 <img src="https://img.shields.io/github/repo-size/Alexoat76/holbertonschool-interview"/>
 <img src="https://img.shields.io/github/languages/code-size/Alexoat76/holbertonschool-interview.svg"/>
@@ -69,6 +70,7 @@ The projects in this repository cover:
 | **[0x03. Log Parsing](./0x03-log_parsing)** | Reads *`stdin`* line by line and Computes metrics |
 | **[0x04. UTF-8 Validation](./0x04-utf8_validation)** | Determines if valid *`UTF-8`* encoding. |
 | **[0x05. N Queens](./0x05-nqueens)** | *`Backtracking`*. |
+| **[0x06. Star Wars API](./0x06-starwars_api)** | *`Star Wars API`*. |
 
 ---
 	
