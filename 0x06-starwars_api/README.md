@@ -8,7 +8,7 @@
 
 # 0x06. Star Wars API
 
-This task consist in Create a *`Script`* that prints all characters of a **`Star Wars`** movie. Using Node-JS.
+This task consist in Create a *`Script`* that prints all characters of a **`Star Wars`** movie. Using ***` NodeJS `***.
 
 <p align="center">
   <img width="320"  
