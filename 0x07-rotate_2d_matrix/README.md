@@ -11,7 +11,7 @@
 Given an *` n `* x *` n `* **2D matrix**, *` rotate `* it **90 degrees** clockwise. Using Python language.
 
 <p align="center">
-  <img width="300"
+  <img width="280"
         src="https://i1.faceprep.in/Companies-1/matrix%20rotation%20by%2090%20degrees.gif"
   >
 </p>
