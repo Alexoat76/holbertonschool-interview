@@ -6,26 +6,27 @@ coins needed to meet a given amount total
 
 
 def makeChange(coins, total):
-    """ Returns fewest number of coins needed to meet total
     """
-
-    if total <= 0:  # If total is 0 or less, return 0
+    Args:
+    coins ([list]): a list of the values of the coins in your possession
+    total ([number]): amount
+    Return: fewest number of coins needed to meet total
+    """
+    if total <= 0:
         return 0
-        # If total is greater than 0 and coins is empty, return -1 (impossible)
-    else:
-        from math import trunc
-        """ Import trunc function from math module to round down
-            to nearest integer
-        """
-        # Sort coins in descending order (largest to smallest)
-        coins = sorted(coins, reverse=True)
-        coin_dict = {}  # Create empty dictionary to store coin values
-        while total is not None:  # While total is not None (empty)
-            for c in coins:  # For each coin in coins list
-                if total % c == 0:  # If total is divisible by coin value
-                    coin_dict[c] = total / c  # Add coin value to dictionary
-                    return(int(sum(coin_dict.values())))  # Return sum of val.
-                else:
-                    coin_dict[c] = trunc(total / float(c))  # Add coin value
-                    total -= (c * coin_dict[c])  # Subt. coin value from total
-            return -1  # If total is not None, return -1
+
+    coins.sort(reverse=True)
+
+    i, n_coins = (0, 0)
+    cpy_total = total
+    len_coins = len(coins)
+
+    while(i < len_coins and cpy_total > 0):
+        if (cpy_total - coins[i]) >= 0:
+            cpy_total -= coins[i]
+            n_coins += 1
+        else:
+            i += 1
+
+    check = cpy_total > 0 and n_coins > 0
+    return -1 if check or n_coins == 0 else n_coins
