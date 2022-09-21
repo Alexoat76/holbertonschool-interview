@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-
-from math import trunc
-
 """
 Given a pile of coins of different values, determine the fewest number of
 coins needed to meet a given amount total
@@ -14,8 +11,9 @@ def makeChange(coins, total):
 
     if total <= 0:  # If total is 0 or less, return 0
         return 0
-        # If total is greater than 0 and coins is empty, return -1
+        # If total is greater than 0 and coins is empty, return -1 (impossible)
     else:
+        from math import trunc
         """ Import trunc function from math module to round down
             to nearest integer
         """
