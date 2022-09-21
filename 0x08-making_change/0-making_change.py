@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-from math import trunc  # Import trunc function from math module
+
+from math import trunc
+
 """
 Given a pile of coins of different values, determine the fewest number of
 coins needed to meet a given amount total
