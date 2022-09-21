@@ -6,26 +6,20 @@ coins needed to meet a given amount total
 
 
 def makeChange(coins, total):
-    """ Returns fewest number of coins needed to meet total
-    """
+    # Returns fewest number of coins needed to meet total
+    """Clasic Bottom-Up dynamic programming"""
+    tmp_value = 0  # temporary value to store the value of the coin being used
+    # sort the coins in descending order to make the algorithm more efficient
+    coins.sort(reverse=True)
 
-    if total <= 0:  # If total is 0 or less, return 0
+    if total < 0:  # if the total is negative, return -1 (no solution)
         return 0
-        # If total is greater than 0 and coins is empty, return -1 (impossible)
-    else:
-        from math import trunc
-        """ Import trunc function from math module to round down
-            to nearest integer
-        """
-        # Sort coins in descending order (largest to smallest)
-        coins = sorted(coins, reverse=True)
-        coin_dict = {}  # Create empty dictionary to store coin values
-        while total is not None:  # While total is not None (empty)
-            for c in coins:  # For each coin in coins list
-                if total % c == 0:  # If total is divisible by coin value
-                    coin_dict[c] = total / c  # Add coin value to dictionary
-                    return(int(sum(coin_dict.values())))  # Return sum of val.
-                else:
-                    coin_dict[c] = trunc(total / float(c))  # Add coin value
-                    total -= (c * coin_dict[c])  # Subt. coin value from total
-            return -1  # If total is not None, return -1
+
+    for coin in coins:  # iterate through the coins list
+        # if the remainder is less than the total amount of change
+        if total % coin <= total:
+            # add the number of coins to the tmp_value variable
+            tmp_value += total // coin
+            total = total % coin  # update the total amount of change
+
+    return tmp_value if total == 0 else -1  # return the number of coins used
