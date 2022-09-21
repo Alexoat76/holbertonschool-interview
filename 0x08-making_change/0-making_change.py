@@ -11,7 +11,7 @@ def makeChange(coins, total):
 
     if total <= 0:  # If total is 0 or less, return 0
         return 0
-        # If total is greater than 0 and coins is empty, return -1 (no change)
+        # If total is greater than 0 and coins is empty, return -1
     else:
         """ Import trunc function from math module to round down
             to nearest integer
