@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from math import trunc  # Import trunc function from math module
 """
 Given a pile of coins of different values, determine the fewest number of
 coins needed to meet a given amount total
@@ -16,8 +17,6 @@ def makeChange(coins, total):
         """ Import trunc function from math module to round down
             to nearest integer
         """
-        from math import trunc  # Import trunc function from math module
-
         # Sort coins in descending order (largest to smallest)
         coins = sorted(coins, reverse=True)
         coin_dict = {}  # Create empty dictionary to store coin values
