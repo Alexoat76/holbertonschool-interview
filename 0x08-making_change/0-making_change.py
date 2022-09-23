@@ -4,7 +4,7 @@ Defines function that determines the fewest number of coins to make change
 """
 
 
-def makeChange(coins, total):
+def makeChange(coins: int, total: int) -> int:
     """
     Determines the fewest number of coins needed to meet a given total
     parameters:
@@ -18,13 +18,8 @@ def makeChange(coins, total):
         the fewest number of coins to make the change
         or -1 if the total change cannot be made with the given coins
     """
-    # initialize dynamic programming list with inf values
-    dynamic = [float('inf') for _ in range(total + 1)]
-    dynamic[0] = 0  # base case: 0 coins needed to make 0 change
-    for i in range(len(dynamic)):
-        for coin in coins:
-            if i - coin >= 0:
-                dynamic[i] = min(dynamic[i], dynamic[i - coin] + 1)
-    if dynamic[-1] == float('inf'):
-        return -1
-    return dynamic[-1]
+    dynamic = [0] + [float('inf')] * total
+    for coin in coins:
+        for i in range(coin, total + 1):
+            dynamic[i] = min(dynamic[i], dynamic[i - coin] + 1)
+    return dynamic[total] if dynamic[total] != float('inf') else -1
