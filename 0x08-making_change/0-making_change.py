@@ -18,16 +18,20 @@ def makeChange(coins, total):
         the fewest number of coins to make the change
         or -1 if the total change cannot be made with the given coins
     """
-    if (total <= 0):
-        return (0)
-
-    coins.sort(reverse=True)
-    needed = 0
-
-    for coin in coins:
-        res = total // coin
-        if (res > 0):
-            needed += res
-            total = total % coin
-
-    return (needed if total == 0 else -1)
+    if total <= 0:
+        return 0
+    if len(coins) == 0:
+        return -1
+    coins = sorted(coins, reverse=True)
+    dynamic = [float('inf')] * (total + 1)
+    dynamic[0] = 0
+    while total is not None:
+        for i in range(total + 1):
+            for coin in coins:
+                if coin > i:
+                    break
+                if dynamic[i - coin] != -1:
+                    dynamic[i] = min(dynamic[i - coin] + 1, dynamic[i])
+        if dynamic[total] == float('inf'):
+            return -1
+        return dynamic[total]
