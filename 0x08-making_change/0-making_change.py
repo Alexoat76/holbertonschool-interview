@@ -23,7 +23,7 @@ def makeChange(coins, total):
     if len(coins) == 0:  # if no coins, return -1 (can't make change)
         return -1
     coins = sorted(coins, reverse=True)  # sort coins in descending order
-    dynamic = [float('inf')] * (total + 1)  # initialize dynamic programming list with inf values
+    dynamic = [float('inf')] * (total + 1)
     dynamic = {}  # initialize dynamic programming dictionary
     while total is not None:
         for coin in coins:
@@ -31,6 +31,6 @@ def makeChange(coins, total):
                 dynamic[coin] = total / coin
                 return(int(sum(dynamic.values())))
             else:
-                dynamic[coin] = total // coin
+                dynamic[coin] = total // float(coin)
                 total -= (coin * dynamic[coin])
         return -1
