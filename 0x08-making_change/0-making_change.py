@@ -10,15 +10,18 @@ def makeChange(coins, total):
     """
     if total <= 0:
         return 0
-    coins.sort(reverse=True)
-    num_coins = 0
-    for coin in coins:
-        if total == 0:
-            return num_coins
-        if coin <= total:
-            num_coins += total // coin
-            total = total % coin
-    if total > 0:
-        return -1
-    return num_coins
-    
+    else:
+        if coins is None or len(coins) == 0:
+            return -1
+        else:
+            coins.sort(reverse=True)
+            count = 0
+            for i in coins:
+                if total >= i:
+                    count += total // i
+                    total = total % i
+            if total != 0:
+                return -1
+            else:
+                return count
+                
