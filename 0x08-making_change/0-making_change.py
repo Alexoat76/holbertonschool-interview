@@ -28,7 +28,7 @@ def makeChange(coins, total):
     while total is not None:
         for i in range(total + 1):
             for coin in coins:
-                if coin > i:
+                if total < coin:
                     break
                 if dynamic[i - coin] != -1:
                     dynamic[i] = min(dynamic[i - coin] + 1, dynamic[i])
