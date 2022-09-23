@@ -15,14 +15,12 @@ def makeChange(coins, total):
             return -1
         else:
             coins = sorted(coins, reverse=True)
-            coin_dict = {}
-            while total is not None:
-                for c in coins:
-                    if total % c == 0:
-                        coin_dict[c] = total / c
-                        return(int(sum(coin_dict.values())))
-                    else:
-                        coin_dict[c] = total // c
-                        total -= (c * coin_dict[c])
-
+            count = 0
+            for i in coins:
+                if total >= i:
+                    count += total // i
+                    total = total % i
+            if total == 0:
+                return count
+            else:
                 return -1
