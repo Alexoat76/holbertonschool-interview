@@ -22,16 +22,20 @@ def makeChange(coins, total):
         return 0
     if len(coins) == 0:  # if no coins, return -1 (can't make change)
         return -1
-    coins = sorted(coins, reverse=True)  # sort coins in descending order
-    coin_dict = [float('inf')] * (total + 1)  # initialize dynamic programming list with inf values
-    coin_dict = {i: float('inf') for i in range(total + 1)}  # initialize dynamic programming dict with inf values
-    coin_dict[0] = 0  # set first value to 0 (no coins needed to make 0 change)
-    for i in range(total + 1):  # iterate through each total value from 0 to total
-        for coin in coins:
-            if coin > i:
-                break
-            if coin_dict[i - coin] != -1:
-                coin_dict[i] = min(coin_dict[i - coin] + 1, coin_dict[i])
-    if coin_dict[total] == float('inf'):
-        return -1
-    return coin_dict[total]  # return total number of coins needed to make change
+    else:
+        from math import trunc
+        """ Import trunc function from math module to round down
+            to nearest integer
+        """
+        coins = sorted(coins, reverse=True)  # sort coins in descending order
+        coin_dict = [float('inf')] * (total + 1)  # initialize dynamic programming list with inf values
+        coin_dict = {}  # create empty dictionary to store coin values
+        while total is not None:
+            for c in coins:
+                if total % c == 0:
+                    coin_dict[c] = total / c
+                    return(int(sum(coin_dict.values())))
+                else:
+                    coin_dict[c] = trunc(total / float(c))
+                    total -= (c * coin_dict[c])
+            return -1
