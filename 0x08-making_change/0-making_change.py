@@ -18,17 +18,16 @@ def makeChange(coins, total):
         the fewest number of coins to make the change
         or -1 if the total change cannot be made with the given coins
     """
-    if total == 0:
-        return 0
-    if total < 0 or len(coins) == 0:
-        return -1
-    if len(coins) == 1 and total in coins:
-        return 1
+    if (total <= 0):
+        return (0)
 
-    nums = [float('inf') for x in range(total+1)]
-    nums[0] = 0
-    for denom in coins:
-        for amount in range(len(nums)):
-            if denom <= amount:
-                nums[amount] = min(nums[amount], 1 + nums[amount - denom])
-    return nums[total] if nums[total] != float('inf') else -1
+    coins.sort(reverse=True)
+    needed = 0
+
+    for coin in coins:
+        res = total // coin
+        if (res > 0):
+            needed += res
+            total = total % coin
+
+    return (needed if total == 0 else -1)
