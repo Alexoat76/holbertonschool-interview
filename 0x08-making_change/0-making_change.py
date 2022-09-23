@@ -29,28 +29,17 @@ def makeChange(coins, total):
     # set first value to 0 (no coins needed to make 0 change)
     dynamic[0] = 0
     # iterate through each total value from 0 to total
-    for coin in coins:
-        for value in range(coin, total + 1):
-            # set current value to min of current value and
-            # 1 + previous value (coin value)
-            dynamic[value] = min(dynamic[value], 1 + dynamic[value - coin])
-    # if last value is inf, return -1 (can't make change)
-    if dynamic[-1] == float('inf'):
+    for i in range(total + 1):
+        for coin in coins:
+            if coin > i:  # if coin value is greater than total, break
+                break
+            # if previous total is possible to make change for (not -1)
+            if dynamic[i - coin] != -1:
+                """ set current total to min of previous total + 1
+                    coin or current total
+                """
+                dynamic[i] = min(dynamic[i - coin] + 1, dynamic[i])
+                # if total is still inf, return -1 (can't make change)
+    if dynamic[total] == float('inf'):
         return -1
-    # return last value (fewest coins needed to make change)
-    return dynamic[total]
-
-    # for i in range(total + 1):
-    #     for coin in coins:
-    #         if coin > i:  # if coin value is greater than total, break
-    #             break
-    #         # if previous total is possible to make change for (not -1)
-    #         if dynamic[i - coin] != -1:
-    #             """ set current total to min of previous total + 1
-    #                 coin or current total
-    #             """
-    #             dynamic[i] = min(dynamic[i - coin] + 1, dynamic[i])
-    #             # if total is still inf, return -1 (can't make change)
-    # if dynamic[total] == float('inf'):
-    #     return -1
-    # return dynamic[total]  # return total number of coins needed to make change
+    return dynamic[total]  # return total number of coins needed to make change
