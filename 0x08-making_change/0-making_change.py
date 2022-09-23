@@ -22,16 +22,20 @@ def makeChange(coins, total):
         return 0
     if len(coins) == 0:
         return -1
+    else:
+        from math import trunc
+        """
+        sort coins in ascending order (smallest to largest)
+        """
     coins = sorted(coins, reverse=True)
     dynamic = [float('inf')] * (total + 1)
     dynamic[0] = 0
     while total is not None:
-        for i in range(total + 1):
-            for coin in coins:
-                if total < coin:
-                    break
-                if dynamic[i - coin] != -1:
-                    dynamic[i] = min(dynamic[i - coin] + 1, dynamic[i])
-        if dynamic[total] == float('inf'):
-            return -1
-        return dynamic[total]
+        for coin in coins:
+            if total % coin == 0:
+                dynamic[total] = total // coin
+                return(dynamic[total])
+            else:
+                dynamic[total] = trunc(total / coin)
+                total -= (dynamic[total] * (coin - 1))
+        return -1
