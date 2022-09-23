@@ -18,24 +18,24 @@ def makeChange(coins, total):
         the fewest number of coins to make the change
         or -1 if the total change cannot be made with the given coins
     """
-    if total <= 0:  # if total is 0 or less, return 0 coins needed
+    if total <= 0:
         return 0
-    if len(coins) == 0:  # if no coins, return -1 (can't make change)
+
+    placeholder = total + 1
+
+    memo = {0: 0}
+
+    for i in range(1, total + 1):
+        memo[i] = placeholder
+
+        for coin in coins:
+            current = i - coin
+            if current < 0:
+                continue
+
+            memo[i] = min(memo[current] + 1, memo[i])
+
+    if memo[total] == total + 1:
         return -1
-    else:
-        from math import trunc
-        """ Import trunc function from math module to round down
-            to nearest integer
-        """
-        coins = sorted(coins, reverse=True)  # sort coins in descending order
-        coin_dict = [float('inf')] * (total + 1)  # initialize dynamic programming list with inf values
-        coin_dict = {}  # create empty dictionary to store coin values
-        while total is not None:
-            for c in coins:
-                if total % c == 0:
-                    coin_dict[c] = total / c
-                    return(int(sum(coin_dict.values())))
-                else:
-                    coin_dict[c] = trunc(total / float(c))
-                    total -= (c * coin_dict[c])
-            return -1
+
+    return memo[total]
