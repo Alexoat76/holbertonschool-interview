@@ -23,7 +23,7 @@ def makeChange(coins, total):
     if len(coins) == 0:  # if no coins, return -1 (can't make change)
         return -1
         # sort coins in ascending order (smallest to largest)
-    coins = sorted(coins)
+    coins = sorted(coins, reverse=True)
     # initialize dynamic programming list with inf values
     dynamic = [float('inf')] * (total + 1)
     # set first value to 0 (no coins needed to make 0 change)
