@@ -35,10 +35,10 @@ def makeChange(coins, total):
             # 1 + previous value (coin value)
             dynamic[value] = min(dynamic[value], 1 + dynamic[value - coin])
     # if last value is inf, return -1 (can't make change)
-    if dynamic[-1] == float('inf'):
+    if dynamic[total] == float('inf'):
         return -1
     # return last value (fewest coins needed to make change)
-    return dynamic[-1]
+    return dynamic[total]
 
     # for i in range(total + 1):
     #     for coin in coins:
