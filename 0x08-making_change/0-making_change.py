@@ -23,14 +23,15 @@ def makeChange(coins, total):
     if len(coins) == 0:  # if no coins, return -1 (can't make change)
         return -1
     coins = sorted(coins, reverse=True)  # sort coins in descending order
-    dynamic = [float('inf')] * (total + 1)
-    dynamic = {}  # initialize dynamic programming dictionary
-    while total is not None:
+    coin_dict = [float('inf')] * (total + 1)  # initialize dynamic programming list with inf values
+    coin_dict = {i: float('inf') for i in range(total + 1)}  # initialize dynamic programming dict with inf values
+    coin_dict[0] = 0  # set first value to 0 (no coins needed to make 0 change)
+    for i in range(total + 1):  # iterate through each total value from 0 to total
         for coin in coins:
-            if total % coin == 0:
-                dynamic[coin] = total / coin
-                return(int(sum(dynamic.values())))
-            else:
-                dynamic[coin] = total // float(coin)
-                total -= (coin * dynamic[coin])
+            if coin > i:
+                break
+            if coin_dict[i - coin] != -1:
+                coin_dict[i] = min(coin_dict[i - coin] + 1, coin_dict[i])
+    if coin_dict[total] == float('inf'):
         return -1
+    return coin_dict[total]  # return total number of coins needed to make change
