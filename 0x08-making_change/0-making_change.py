@@ -18,24 +18,44 @@ def makeChange(coins, total):
         the fewest number of coins to make the change
         or -1 if the total change cannot be made with the given coins
     """
-    if total <= 0:
+    if total <= 0:  # if total is 0 or less, return 0 coins needed
         return 0
-    if len(coins) == 0:
+    if len(coins) == 0:  # if no coins, return -1 (can't make change)
         return -1
-    else:
-        from math import trunc
-        """
-        sort coins in ascending order (smallest to largest)
-        """
-    coins = sorted(coins, reverse=True)
+        # sort coins in ascending order (smallest to largest)
+    coins = sorted(coins)
+    # initialize dynamic programming list with inf values
     dynamic = [float('inf')] * (total + 1)
+    # set first value to 0 (no coins needed to make 0 change)
     dynamic[0] = 0
-    while total is not None:
-        for coin in coins:
-            if total % coin == 0:
-                dynamic[total] = total // coin
-                return(dynamic[total])
-            else:
-                dynamic[total] = trunc(total / coin)
-                total -= (dynamic[total] * (coin - 1))
+    # iterate through each total value from 0 to total
+    while coins:
+        coin = coins.pop()
+        for i in range(coin, total + 1):
+            # if coin is less than or equal to current total
+            if coin <= i:
+                # set current total to minimum of current total and
+                # 1 + previous total (coin value)
+                dynamic[i] = min(dynamic[i], 1 + dynamic[i - coin])
+    # if total change cannot be made with given coins, return -1
+    if dynamic[total] == float('inf'):
         return -1
+    # return fewest number of coins needed to make change
+    return dynamic[total]
+    
+
+
+    # for i in range(total + 1):
+    #     for coin in coins:
+    #         if coin > i:  # if coin value is greater than total, break
+    #             break
+    #         # if previous total is possible to make change for (not -1)
+    #         if dynamic[i - coin] != -1:
+    #             """ set current total to min of previous total + 1
+    #                 coin or current total
+    #             """
+    #             dynamic[i] = min(dynamic[i - coin] + 1, dynamic[i])
+    #             # if total is still inf, return -1 (can't make change)
+    # if dynamic[total] == float('inf'):
+    #     return -1
+    # return dynamic[total]  # return total number of coins needed to make change
