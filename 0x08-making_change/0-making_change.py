@@ -18,30 +18,17 @@ def makeChange(coins, total):
         the fewest number of coins to make the change
         or -1 if the total change cannot be made with the given coins
     """
-    if total <= 0:  # if total is 0 or less, return 0 coins needed
+    if total == 0:
         return 0
-    if len(coins) == 0:  # if no coins, return -1 (can't make change)
+    if total < 0 or len(coins) == 0:
         return -1
-        # sort coins in ascending order (smallest to largest)
-    coins = sorted(coins)
-    # initialize dynamic programming list with inf values
-    dynamic = [float('inf')] * (total + 1)
-    # set first value to 0 (no coins needed to make 0 change)
-    dynamic[0] = 0
-    # iterate through each total value from 0 to total
-    while dynamic[total] == float('inf'):
-        for i in range(total + 1):
-            # iterate through each coin value
-            for coin in coins:
-                # if coin value is less than or equal to total value
-                if coin > i:
-                    break
-                # if coin value is less than or equal to total value
-                if dynamic[i - coin] != -1:
-                    # set dynamic value to min of current value and
-                    #   previous value + 1
-                    dynamic[i] = min(dynamic[i], dynamic[i - coin] + 1)
-        # if no change can be made, return -1
-        if dynamic[total] == float('inf'):
-            return -1
-    return dynamic[total]
+    if len(coins) == 1 and total in coins:
+        return 1
+
+    nums = [float('inf') for x in range(total+1)]
+    nums[0] = 0
+    for denom in coins:
+        for amount in range(len(nums)):
+            if denom <= amount:
+                nums[amount] = min(nums[amount], 1 + nums[amount - denom])
+    return nums[total] if nums[total] != float('inf') else -1
