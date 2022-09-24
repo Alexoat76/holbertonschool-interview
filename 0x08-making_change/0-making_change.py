@@ -12,6 +12,6 @@ def makeChange(coins: int, amount: int) -> int:
     dynamic[0] = 0
     for coin in coins:
         for i in range(len(dynamic)):
-            if i >= coin:
-                dynamic[i] = min(dynamic[i], dynamic[i - coin] + 1)
-    return dynamic[amount] if dynamic[amount] != float('inf') else -1
+            if i-coin >= 0:
+                dynamic[i] = min(dynamic[i], dynamic[i-coin] + 1)
+    return dynamic[-1] if dynamic[-1] != float('inf') else -1
