@@ -11,8 +11,8 @@
 Create a function that returns the *` perimeter `* of the island described in **` grid `**. Using Python language.
 
 <p align="center">
-  <img width="260"
-        src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ae382565492643.5af5d8f6aa348.gif"
+  <img width="300"
+        src="https://i.pinimg.com/originals/cf/51/ad/cf51ad748537f4ea6899ab44388ad110.gif"
   >
 </p>
 
@@ -57,13 +57,51 @@ Read or watch:
 
 + **[0-main.py](./0-main.py)**  *`Provided by Holberton School`*.
 
----
-
 ## Tasks
 
 + [x] 0\. **Island Perimeter**
 
 + **[0-island_perimeter.py](./0-island_perimeter.py)**
+
+Create a function   *` def island_perimeter(grid): `*   that returns the perimeter of the island described in   *` grid `*  :
+*  *` grid `*  is a list of list of integers:
+	* 0 represents water
+	* 1 represents land
+	* Each cell is square, with a side length of 1
+	* Cells are connected horizontally/vertically (not diagonally). 
+	*  *` grid `*  is rectangular, with its width and height not exceeding 100
+* The grid is completely surrounded by water
+* There is only one island (or nothing).
+* The island doesn’t have “lakes” (water inside that isn’t connected to the water surrounding the island).
+
+```python3
+#!/usr/bin/python3
+"""
+0-main
+"""
+island_perimeter = __import__('0-island_perimeter').island_perimeter
+
+if __name__ == "__main__":
+    grid = [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0]
+    ]
+    print(island_perimeter(grid))
+
+```
+```bash
+$ 
+$ ./0-main.py
+12
+$ 
+
+```
+
+
+---
 
 ---
 
