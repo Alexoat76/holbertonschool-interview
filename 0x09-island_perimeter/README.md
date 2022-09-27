@@ -29,9 +29,9 @@ Create a function that returns the *` perimeter `* of the island described in **
 ## Resources :books:
 Read or watch:
 	
-[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/80px-Google_2015_logo.svg.png)](https://www.google.com/search?q=making+change+problem+in+python&oq=Making+Change+problem+&aqs=chrome.3.69i57j0i512l9.7313j0j15&sourceid=chrome&ie=UTF-8)
+[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/80px-Google_2015_logo.svg.png)](https://www.google.com/search?q=island+perimeter+python&ei=T7kxY-aNDLSzkvQPiK6GmAc&oq=Island+Perimeter&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIHCAAQsAMQQ0oECEEYAEoECEYYAFAAWABg9wloAXABeACAAQCIAQCSAQCYAQDIAQnAAQE&sclient=gws-wiz)
 
-[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/70px-Logo_of_YouTube_%282015-2017%29.svg.png)](https://www.youtube.com/results?search_query=making+change+problem+in+python)
+[![M](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/70px-Logo_of_YouTube_%282015-2017%29.svg.png)](https://www.youtube.com/results?search_query=island+perimeter+python)
 
 ## Requirements
 ### General
