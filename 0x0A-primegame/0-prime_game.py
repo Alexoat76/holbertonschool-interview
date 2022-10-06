@@ -5,7 +5,7 @@ number of rounds of playing the Prime Game.
 """
 
 
-from itertools import count
+# from itertools import count
 
 
 def isWinner(x, nums):
